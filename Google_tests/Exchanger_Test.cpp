@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "../lib/Exchanger.h"
+#include "../lib/Exchanger.cpp"
 
 using namespace std;
 namespace c3xx = zxseitz::c3xx;
