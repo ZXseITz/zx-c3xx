@@ -8,21 +8,16 @@ namespace zxseitz {
         template<typename T>
         class Exchanger {
         private:
-            volatile T *m_data;
+            T *m_data;
             std::mutex m_mutex;
             std::condition_variable m_cond;
         public:
-            Exchanger();
-            T *exchange(T *data);
+            Exchanger() = default;
+            T *Exchange(T *data);
         };
 
         template<typename T>
-        Exchanger<T>::Exchanger(): m_mutex(), m_cond() {
-
-        }
-
-        template<typename T>
-        T *Exchanger<T>::exchange(T *data) {
+        T *Exchanger<T>::Exchange(T *data) {
             std::unique_lock <std::mutex> lock(m_mutex);
             if (m_data == nullptr) {
                 m_data = data;
