@@ -1,9 +1,9 @@
 #include "gtest/gtest.h"
 #include "../lib/Exchanger.h"
-#include "../lib/Exchanger.cpp"
+#include "../lib/Exchanger.cpp"  // import cpp file because of template
 
 using namespace std;
-namespace c3xx = zxseitz::c3xx;
+namespace c = zxseitz::c3xx;
 
 class ExchangerFixture: public ::testing::Test {
 public:
@@ -13,7 +13,7 @@ public:
 };
 
 TEST_F(ExchangerFixture, test1) {
-    auto ex = make_shared<c3xx::Exchanger<int>>();
+    auto ex = make_shared<c::Exchanger<int>>();
     thread t2([ex]() {
         auto i2 = make_shared<int>(2);
         auto i1 = ex->Exchange(i2);

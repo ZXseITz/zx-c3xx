@@ -1,10 +1,10 @@
 #include "Exchanger.h"
 
 using namespace std;
-namespace c3xx = zxseitz::c3xx;
+namespace c = zxseitz::c3xx;
 
 template<typename T>
-std::shared_ptr<T> c3xx::Exchanger<T>::Exchange(std::shared_ptr<T> data) {
+std::shared_ptr<T> c::Exchanger<T>::Exchange(std::shared_ptr<T> data) {
     std::unique_lock<std::mutex> lock(m_mutex);
     if (m_data == nullptr) {
         m_data = data;

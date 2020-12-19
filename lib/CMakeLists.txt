@@ -1,10 +1,12 @@
 project(lib)
 
 set(HEADER_FILES
+        CountDownLatch.h
         Exchanger.h
         )
 
 set(SOURCE_FILES
+        CountDownLatch.cpp
         Exchanger.cpp
         )
 
