@@ -12,7 +12,7 @@ public:
     }
 };
 
-TEST_F(ExchangerFixture, test1) {
+TEST_F(ExchangerFixture, test_exchange) {
     auto ex = make_shared<c::Exchanger<int>>();
     thread t2([ex]() {
         auto i2 = make_shared<int>(2);

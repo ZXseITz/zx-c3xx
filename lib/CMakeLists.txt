@@ -8,6 +8,6 @@ set(HEADER_FILES
 set(SOURCE_FILES
         CountDownLatch.cpp
         CyclicBarrier.cpp
-        Exchanger.cpp )
+        Exchanger.cpp Semaphore.cpp Semaphore.h)
 
 add_library(c3xx_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
